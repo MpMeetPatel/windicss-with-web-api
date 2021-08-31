@@ -59,16 +59,16 @@ Windi CSS provides first-class integrations for your favorite tools, select your
 
 ## CDN Links for Browser/JavaScipt IIFE APIs  🛠
 
-config: [https://unpkg.com/windicss-with-web-api@0.1.2/dist/config/index.iife.js](https://unpkg.com/windicss-with-web-api@0.1.2/dist/config/index.iife.js).
-helpers: [https://unpkg.com/windicss-with-web-api@0.1.2/dist/helpers/index.iife.js](https://unpkg.com/windicss-with-web-api@0.1.2/dist/helpers/index.iife.js).
-lib: [https://unpkg.com/windicss-with-web-api@0.1.2/dist/lib/index.iife.js](https://unpkg.com/windicss-with-web-api@0.1.2/dist/lib/index.iife.js).
-plugin: [https://unpkg.com/windicss-with-web-api@0.1.2/dist/plugin/index.iife.js](https://unpkg.com/windicss-with-web-api@0.1.2/dist/plugin/index.iife.js).
-utils: [https://unpkg.com/windicss-with-web-api@0.1.2/dist/utils/index.iife.js](https://unpkg.com/windicss-with-web-api@0.1.2/dist/utils/index.iife.js).
+- config: [https://unpkg.com/windicss-with-web-api@0.2.1/dist/config/index.iife.js](https://unpkg.com/windicss-with-web-api@0.2.1/dist/config/index.iife.js).
+- helpers: [https://unpkg.com/windicss-with-web-api@0.2.1/dist/helpers/index.iife.js](https://unpkg.com/windicss-with-web-api@0.2.1/dist/helpers/index.iife.js).
+- lib: [https://unpkg.com/windicss-with-web-api@0.2.1/dist/lib/index.iife.js](https://unpkg.com/windicss-with-web-api@0.2.1/dist/lib/index.iife.js).
+- plugin: [https://unpkg.com/windicss-with-web-api@0.2.1/dist/plugin/index.iife.js](https://unpkg.com/windicss-with-web-api@0.2.1/dist/plugin/index.iife.js).
+- utils: [https://unpkg.com/windicss-with-web-api@0.2.1/dist/utils/index.iife.js](https://unpkg.com/windicss-with-web-api@0.2.1/dist/utils/index.iife.js).
 #### Example Links [Live WindCSS in browser compilation]
 
 
-**HTML demo link:** https://codesandbox.io/s/html-windicss-live-playground-b2kbh
-**React demo link:** https://codesandbox.io/s/react-windicss-live-playground-5j7xr
+- **HTML demo link:** https://codesandbox.io/s/html-windicss-live-playground-b2kbh
+- **React demo link:** https://codesandbox.io/s/react-windicss-live-playground-5j7xr
 
 **UNPKG CDN link:** https://unpkg.com/browse/windicss-with-web-api@0.1.2/
 
