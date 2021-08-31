@@ -3,7 +3,11 @@
   <img src="https://next.windicss.org/assets/logo.svg" alt="Windi CSS Logo" height="120" width="120"/><br>
 </a>
   Windi CSS
+  <br/>
+  +
 </h1>
+<h5 align="center">WindiCSS Web APIs for Browsers.</h5>
+<h5 align="center">Check out APIs <a href="#APIs">here</a> untill it available on official WindiCSS.</h5>
 
 <p align="center">
   <a href="https://www.npmjs.com/package/windicss"><img src="https://img.shields.io/npm/v/windicss.svg?color=0EA5E9" alt="Npm Version"></a>
@@ -49,6 +53,24 @@ Windi CSS provides first-class integrations for your favorite tools, select your
 | Nuxt | [nuxt-windicss](https://github.com/windicss/nuxt-windicss-module) | ![](https://img.shields.io/npm/v/nuxt-windicss-module?label=&color=1388bd) |
 | Svelte | [svelte-windicss-preprocess](https://github.com/windicss/svelte-windicss-preprocess) | ![](https://img.shields.io/npm/v/svelte-windicss-preprocess?label=&color=1388bd) |
 | StencilJS | [stencil-windicss](https://github.com/codeperate/stencil-windicss)<sup>Community</sup> | ![](https://img.shields.io/npm/v/@codeperate/stencil-windicss?label=&color=1388bd) |
+| Web APIs | [Web-APIs]()<sup>Community</sup> | 0.1.0 |
+
+<div id="APIs"></div>
+
+## CDN Links for Browser/JavaScipt IIFE APIs  🛠
+
+config: [https://unpkg.com/windicss-with-web-api@0.1.2/dist/config/index.iife.js](https://unpkg.com/windicss-with-web-api@0.1.2/dist/config/index.iife.js).
+helpers: [https://unpkg.com/windicss-with-web-api@0.1.2/dist/helpers/index.iife.js](https://unpkg.com/windicss-with-web-api@0.1.2/dist/helpers/index.iife.js).
+lib: [https://unpkg.com/windicss-with-web-api@0.1.2/dist/lib/index.iife.js](https://unpkg.com/windicss-with-web-api@0.1.2/dist/lib/index.iife.js).
+plugin: [https://unpkg.com/windicss-with-web-api@0.1.2/dist/plugin/index.iife.js](https://unpkg.com/windicss-with-web-api@0.1.2/dist/plugin/index.iife.js).
+utils: [https://unpkg.com/windicss-with-web-api@0.1.2/dist/utils/index.iife.js](https://unpkg.com/windicss-with-web-api@0.1.2/dist/utils/index.iife.js).
+#### Example Links [Live WindCSS in browser compilation]
+
+
+**HTML demo link:** https://codesandbox.io/s/html-windicss-live-playground-b2kbh
+**React demo link:** https://codesandbox.io/s/react-windicss-live-playground-5j7xr
+
+**UNPKG CDN link:** https://unpkg.com/browse/windicss-with-web-api@0.1.2/
 
 ## Plugins 🛠
 

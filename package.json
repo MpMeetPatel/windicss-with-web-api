@@ -1,7 +1,7 @@
 {
-  "name": "windicss",
-  "version": "3.1.7",
-  "description": "Next generation utility-first CSS framework.",
+  "name": "windicss-with-web-api",
+  "version": "0.2.0",
+  "description": "Next generation utility-first CSS framework with web apis.",
   "main": "index.js",
   "module": "index.mjs",
   "types": "index.d.ts",
@@ -14,13 +14,14 @@
     "lint": "eslint . --ext .ts",
     "lint:fix": "npm run lint -- --fix",
     "typecheck": "tsc -p ./src --noEmit",
-    "build": "rollup -c && pnpm tsd",
+    "build": "rm -rf dist && rollup -c && pnpm tsd",
     "build:prod": "cross-env NODE_ENV=production pnpm build",
     "test": "sucrase-node test/run.ts",
     "test:update": "cross-env UPDATE_SNAPSHOT=true sucrase-node test/run.ts",
     "test:dts": "tsc -p ./test/dts --noEmit",
     "coverage": "nyc --nycrc-path=.nycrc.json pnpm test",
-    "release": "bumpp --tag --commit --push"
+    "release": "bumpp --tag --commit --push",
+    "publish": "npm publish --access public"
   },
   "exports": {
     "./package.json": "./package.json",
@@ -106,9 +107,9 @@
   "engines": {
     "node": ">= 12"
   },
-  "author": "Veritas Raven",
+  "author": "Veritas Raven (Original) + Meet Patel (fork)",
   "license": "MIT",
-  "homepage": "https://github.com/voorjaar/windicss",
+  "homepage": "https://github.com/MpMeetPatel/windicss-with-web-api",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^18.0.0",
     "@rollup/plugin-json": "^4.1.0",
@@ -130,6 +131,7 @@
     "arg": "^5.0.0",
     "bumpp": "^6.0.6",
     "caller-path": "^3.0.0",
+    "camel-case": "^4.1.2",
     "chalk": "^4.1.0",
     "color-string": "^1.5.5",
     "cross-env": "^7.0.3",
@@ -150,5 +152,8 @@
     "tosource": "^2.0.0-alpha.2",
     "tslib": "^2.1.0",
     "typescript": "^4.2.3"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }
