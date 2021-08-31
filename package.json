@@ -1,6 +1,6 @@
 {
   "name": "windicss-with-web-api",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Next generation utility-first CSS framework with web apis.",
   "main": "index.js",
   "module": "index.mjs",
