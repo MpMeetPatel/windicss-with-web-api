@@ -6,6 +6,7 @@ import sucrase from '@rollup/plugin-sucrase';
 import typescript from '@rollup/plugin-typescript';
 import commonjs from '@rollup/plugin-commonjs';
 import json from '@rollup/plugin-json';
+import { camelCase } from 'camel-case';
 import pkg from './package.json';
 
 const output_dir = './dist';
@@ -86,6 +87,27 @@ export default [
     ],
   },
 
+  // IIFE (main)
+  {
+    input: 'src/index.ts',
+    output: [
+      {
+        file: dump('index.iife.js'),
+        format: 'iife',
+        name: 'windicss',
+        globals: {
+          windicss: 'windicss'
+        }
+      },
+    ],
+    // external: (id) => id.startsWith('./'),
+    plugins: [
+      ts_plugin,
+      commonjs(),
+      resolve({ browser: true }),
+    ],
+  },
+
   // colors
   {
     input: 'src/colors.ts',
@@ -109,6 +131,27 @@ export default [
     ],
   },
 
+  // IIFE (colors)
+  {
+    input: 'src/colors.ts',
+    output: [
+      {
+        file: dump('colors.iife.js'),
+        format: 'iife',
+        name: 'colors',
+        globals: {
+          colors: 'colors'
+        }
+      },
+    ],
+    // external: (id) => id.startsWith('./'),
+    plugins: [
+      ts_plugin,
+      commonjs(),
+      resolve({ browser: true }),
+    ],
+  },
+
   // defaultConfig
   {
     input: 'src/defaultConfig.ts',
@@ -129,8 +172,27 @@ export default [
     plugins: [
       ts_plugin,
       types("defaultConfig.d.ts", "./types/defaultConfig", "{ default }")],
-
   },
+
+    // IIFE (defaultConfig)
+    {
+      input: 'src/defaultConfig.ts',
+      output: [
+        {
+          file: dump('defaultConfig.iife.js'),
+          format: 'iife',
+          name: 'defaultConfig',
+          globals: {
+            defaultConfig: 'defaultConfig'
+          }
+        },
+      ],
+      plugins: [
+        ts_plugin,
+        commonjs(),
+        resolve({ browser: true }),
+      ],
+    },
 
   // defaultTheme
   {
@@ -152,6 +214,26 @@ export default [
     plugins: [
       ts_plugin,
       types("defaultTheme.d.ts", "./types/defaultTheme", "{ default }")
+    ],
+  },
+
+  // IIFE (defaultTheme)
+  {
+    input: 'src/defaultTheme.ts',
+    output: [
+      {
+        file: dump('defaultTheme.iife.js'),
+        format: 'iife',
+        name: 'defaultTheme',
+        globals: {
+          defaultTheme: 'defaultTheme'
+        }
+      },
+    ],
+    plugins: [
+      ts_plugin,
+      commonjs(),
+      resolve({ browser: true }),
     ],
   },
 
@@ -178,6 +260,26 @@ export default [
     ],
   },
 
+  // IIFE (defaultTheme)
+  {
+    input: 'src/resolveConfig.ts',
+    output: [
+      {
+        file: dump('resolveConfig.iife.js'),
+        format: 'iife',
+        name: 'resolveConfig',
+        globals: {
+          resolveConfig: 'resolveConfig'
+        }
+      },
+    ],
+    plugins: [
+      ts_plugin,
+      commonjs(),
+      resolve({ browser: true }),
+    ],
+  },
+
   // plugin
   {
     input: 'src/plugin/index.ts',
@@ -200,6 +302,26 @@ export default [
     ],
   },
 
+  // IIFE (plugin)
+  {
+    input: 'src/plugin/index.ts',
+    output: [
+      {
+        file: dump('plugin/index.iife.js'),
+        format: 'iife',
+        name: 'plugin',
+        globals: {
+          plugin: 'plugin'
+        }
+      },
+    ],
+    plugins: [
+      ts_plugin,
+      commonjs(),
+      resolve({ browser: true }),
+    ],
+  },
+
   // plugin deep
   ...fs.readdirSync('src/plugin').filter(dir => fs.statSync(`src/plugin/${dir}`).isDirectory())
     .map((dir) => ({
@@ -219,6 +341,27 @@ export default [
       ],
     })),
 
+    // IIFE (plugin deep)
+  ...fs.readdirSync('src/plugin').filter(dir => fs.statSync(`src/plugin/${dir}`).isDirectory())
+  .map((dir) => ({
+    input: `src/plugin/${dir}/index.ts`,
+    output: [
+      {
+        file: dump(`plugin/${dir}/index.iife.js`),
+        format: 'iife',
+        name: camelCase(dir),
+        globals: {
+          [camelCase(dir)]: camelCase(dir)
+        }
+      },
+    ],
+    plugins: [
+      ts_plugin,
+      commonjs(),
+      resolve({ browser: true }),
+    ],
+  })),
+  
   // cli
   {
     input: 'src/cli/index.ts',
@@ -273,6 +416,27 @@ export default [
       ],
     })),
 
+  // IIFE (utils)
+  ...fs.readdirSync('src/').filter((dir) => ['config', 'lib', 'utils', 'helpers'].includes(dir) && fs.statSync(`src/${dir}`).isDirectory())
+    .map((dir) => ({
+      input: `src/${dir}/index.ts`,
+      output: [
+        {
+          file: dump(`${dir}/index.iife.js`),
+          format: 'iife',
+          name: camelCase(dir),
+          globals: {
+            [camelCase(dir)]: camelCase(dir)
+          }
+        },
+      ],
+      plugins: [
+        ts_plugin,
+        commonjs(),
+        resolve({ browser: true }),
+      ],
+    })),
+
   // utils deep
   ...fs
     .readdirSync('src/utils')
@@ -299,6 +463,32 @@ export default [
         commonjs(),
         pack(`utils/${dir}`),
         types(`utils/${dir}/index.d.ts`, `../../types/utils/${dir}/index`),
+      ],
+    })),
+
+  // IIFE (utils deep)
+  ...fs
+    .readdirSync('src/utils')
+    .filter(
+      (dir) =>
+        dir !== 'algorithm' && fs.statSync(`src/utils/${dir}`).isDirectory()
+    )
+    .map((dir) => ({
+      input: `src/utils/${dir}/index.ts`,
+      output: [
+        {
+          file: dump(`utils/${dir}/index.iife.js`),
+          format: 'iife',
+          name: camelCase(dir),
+          globals: {
+            [camelCase(dir)]: camelCase(dir)
+          }
+        },
+      ],
+      plugins: [
+        ts_plugin,
+        commonjs(),
+        resolve({ browser: true }),
       ],
     })),
 ];
