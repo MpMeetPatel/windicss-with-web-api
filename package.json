@@ -148,6 +148,7 @@
     "nyc": "^15.1.0",
     "pirates": "^4.0.1",
     "rollup": "^2.44.0",
+    "rollup-plugin-terser": "^7.0.2",
     "sucrase": "^3.17.1",
     "tosource": "^2.0.0-alpha.2",
     "tslib": "^2.1.0",

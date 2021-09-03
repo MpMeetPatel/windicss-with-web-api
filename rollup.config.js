@@ -6,6 +6,7 @@ import sucrase from '@rollup/plugin-sucrase';
 import typescript from '@rollup/plugin-typescript';
 import commonjs from '@rollup/plugin-commonjs';
 import json from '@rollup/plugin-json';
+import { terser } from 'rollup-plugin-terser';
 import { camelCase } from 'camel-case';
 import pkg from './package.json';
 
@@ -105,6 +106,11 @@ export default [
       ts_plugin,
       commonjs(),
       resolve({ browser: true }),
+      terser({
+        ecma: '5',
+        compress: true,
+        mangle: true,
+      })
     ],
   },
 
@@ -149,6 +155,11 @@ export default [
       ts_plugin,
       commonjs(),
       resolve({ browser: true }),
+      terser({
+        ecma: '5',
+        compress: true,
+        mangle: true,
+      })
     ],
   },
 
@@ -191,6 +202,11 @@ export default [
         ts_plugin,
         commonjs(),
         resolve({ browser: true }),
+        terser({
+          ecma: '5',
+          compress: true,
+          mangle: true,
+        })
       ],
     },
 
@@ -234,6 +250,11 @@ export default [
       ts_plugin,
       commonjs(),
       resolve({ browser: true }),
+      terser({
+        ecma: '5',
+        compress: true,
+        mangle: true,
+      })
     ],
   },
 
@@ -277,6 +298,11 @@ export default [
       ts_plugin,
       commonjs(),
       resolve({ browser: true }),
+      terser({
+        ecma: '5',
+        compress: true,
+        mangle: true,
+      })
     ],
   },
 
@@ -319,6 +345,11 @@ export default [
       ts_plugin,
       commonjs(),
       resolve({ browser: true }),
+      terser({
+        ecma: '5',
+        compress: true,
+        mangle: true,
+      })
     ],
   },
 
@@ -359,6 +390,11 @@ export default [
       ts_plugin,
       commonjs(),
       resolve({ browser: true }),
+      terser({
+        ecma: '5',
+        compress: true,
+        mangle: true,
+      })
     ],
   })),
   
@@ -434,6 +470,11 @@ export default [
         ts_plugin,
         commonjs(),
         resolve({ browser: true }),
+        terser({
+          ecma: '5',
+          compress: true,
+          mangle: true,
+        })
       ],
     })),
 
@@ -489,6 +530,11 @@ export default [
         ts_plugin,
         commonjs(),
         resolve({ browser: true }),
+        terser({
+          ecma: '5',
+          compress: true,
+          mangle: true,
+        })
       ],
     })),
 ];
